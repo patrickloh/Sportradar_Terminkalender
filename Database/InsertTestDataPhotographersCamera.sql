@@ -1,12 +1,28 @@
-INSERT INTO 
-PhotographerModelTBL (FirstName, LastName, BirthDay, Notes) 
-VALUES 
-('Lisa', 'Steinwender', '1993-09-07', 'getting shit done'),
-('Veronika', 'Turewicz', '1989-08-09', 'such nice pictures wow'),
-('Alph', 'Kidee', '1992-03-19', 'helper mit klasse');
+INSERT INTO
+SportTBL (Type, Description)
+VALUES
+("Esport", "CounterStrike CS:GO"),
+("Football", "Austrian Football"),
+("Basketball", "Austrian Basketball");
 
 INSERT INTO
-CameraModelTBL (Producer, Make, BoughtOn, Notes, ISOLimitGood, ISOLimitAcceptable)
+assosiationtbl (Name, Description, _SportID)
 VALUES
-('Leica', 'Q2', '2019-09-05', 'nice', 1, 1),
-('Fujifilm', 'XT20', '2018-03-16', 'great value', 1, 1);
+("Astralis", "CounterStrike CS:GO Profi Team" , 1),
+("RB Salzburg", "Austrian Football Club", 2),
+("Gunners", "Austrian Basketball Club", 3),
+("FNTC", "CounterStrike CS:GO Profi Team" , 1),
+("Rapid Wien", "Austrian Football Club", 2),
+("Swans", "Austrian Basketball Club", 3);
+
+INSERT INTO
+eventtbl (Name, Description, Pricepool, _SportID)
+VALUES
+("Berlin Major", "CounterStrike CS:GO Profi Liga", 100000, 1),
+("Austrian Football Budesliga", "Austrian Football Club Liga", 0, 2),
+("Austrian Basketball Budesliga", "Austrian Basketball Club Liga", 0, 3);
+
+INSERT INTO
+diarytbl (Date, Title, Description, _SportID, _EventID, _ParticipantOneID, _ParticipantTwoID)
+VALUES
+("2019-11-20 09:45:00", "", "", 1, 1, 1, 4);
