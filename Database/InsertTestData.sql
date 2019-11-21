@@ -27,6 +27,6 @@ VALUES
 ("Austrian Basketball Liga", "Austrian Basketball Club Liga", NULL, 4);
 
 INSERT INTO
-DiaryTBL (Date, _FK_SportTypeID, _FK_EventID, _FK_ParticipantOneID, _FK_ParticipantTwoID)
+CalenderTBL (Date, _FK_SportTypeID, _FK_EventID, _FK_ParticipantOneID, _FK_ParticipantTwoID)
 VALUES
 ("2019-11-20 09:45:00", 1, 1, 1, 2);
