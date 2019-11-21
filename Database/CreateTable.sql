@@ -38,7 +38,7 @@ CREATE TABLE DiaryTBL (
     _FK_EventID INT,
     _FK_ParticipantOneID INT,
     _FK_ParticipantTwoID INT,    
-    FOREIGN KEY (_FK_SportTypeID) REFERENCES SportTypeTBL(SportTypeID)
+    FOREIGN KEY (_FK_SportTypeID) REFERENCES SportTypeTBL(SportTypeID),
     FOREIGN KEY (_FK_EventID) REFERENCES EventTBL(EventID),
     FOREIGN KEY (_FK_ParticipantOneID) REFERENCES TeamTBL(TeamID),
     FOREIGN KEY (_FK_ParticipantTwoID) REFERENCES TeamTBL(TeamID)

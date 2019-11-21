@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 
+require("vendor/autoload.php");
+use src\DatabaseReader;
+
 //If the HTTPS is not found to be "on"
 if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
 {
@@ -37,39 +40,8 @@ if(time() - $_SESSION["timeout"] > 2){
 </head>
 <body>
 <main id="main">
-    <h1>Terminkalender für Sportevents</h1>
-    <!-- Page Content -->
-    <div id="container">
-        <div id="buttons_options">
-            <button id="button_option">Filter Matches</button>
-            <button id="button_option">Live Ticker</button>
-        </div>
-        <button id="button_prev"> < Previous Week</button>
-        <button id="button_next">Next Week > </button>
+    <div>
 
-        <table id="table">
-            <tr>
-                <th>Datum</th>
-                <th>Sportart</th>
-                <th>Encounter</th>
-            </tr>
-            <?php
-            $sportDataFormatter = new \src\DatabaseAccess();
-            $matches = $sportDataFormatter->getAllDiaries();
-
-            foreach ($matches as $match) {
-                /** @var src\Models\Diary $match */
-                $teamHome = $match->getParticipantOne();
-                $teamAway = $match->getParticipantTwo();
-
-                echo "<tr>";
-                echo "<td>{$match->getDate()}</td>";
-                echo "<td><a href='#'>{$match->getSportType()}</a></td>";
-                echo "<td><a href='#'>" . $teamHome . '</a> vs ' . "<a href='#'>" . $teamAway . "</a></td>";
-                echo "</tr>";
-            }
-            ?>
-        </table>
     </div>
 </main>
 
