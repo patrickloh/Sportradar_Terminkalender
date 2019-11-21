@@ -1,6 +1,6 @@
 USE Master
 
-IF EXISTS(SELECT * FROM sysdatabases WHERE name = 'SportsDiary')
+IF EXISTS(SELECT * FROM sysdatabases WHERE name = 'SportsCalender')
     DROP DATABASE PictureDatabase
 GO
 
